@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { TeamMember } from '@prisma/client';
+import { TeamMember } from '@/data/team';
 
 interface TeamGridProps {
   members: TeamMember[];

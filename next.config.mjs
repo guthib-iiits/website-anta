@@ -3,6 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  transpilePackages: ['framer-motion'],
   images: {
     remotePatterns: [
       {

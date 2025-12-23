@@ -3,15 +3,14 @@ import { StatsStrip } from '@/components/sections/stats-strip';
 import { Rounds } from '@/components/sections/rounds';
 import { TeamGrid } from '@/components/sections/team-grid';
 import { ContactCTA } from '@/components/sections/contact-cta';
-import { prisma } from '@/lib/prisma';
+import { iiits } from '@/data/iiits';
+import { team } from '@/data/team';
 
 export const revalidate = 60;
 
-export default async function HomePage() {
-  const [members, institutes] = await Promise.all([
-    prisma.teamMember.findMany({ orderBy: { order: 'asc' } }),
-    prisma.iIIT.findMany({ take: 6, orderBy: { name: 'asc' } }),
-  ]);
+export default function HomePage() {
+  const institutes = iiits.slice(0, 6);
+  const members = [...team].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return (
     <div className="space-y-14">
