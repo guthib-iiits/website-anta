@@ -7,17 +7,17 @@
 }
 
 body {
-  @apply bg-night text-white font-display antialiased min-h-screen; 
+  @apply bg-night text-white font-display antialiased min-h-screen;
   background-image: radial-gradient(circle at 20% 20%, rgba(72, 181, 255, 0.08), transparent 30%),
     radial-gradient(circle at 80% 0%, rgba(255, 61, 154, 0.08), transparent 25%),
     linear-gradient(145deg, rgba(7, 10, 20, 0.95), rgba(5, 6, 10, 0.95)),
     var(--grid-overlay);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 80px 80px;
   background-attachment: fixed;
 }
 
 :root {
-  --grid-overlay: radial-gradient(circle at 1px 1px, rgba(72, 181, 255, 0.18) 1px, transparent 0);
+  --grid-overlay: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cg fill='%2348b5ff' font-family='JetBrains Mono, monospace' font-size='8' opacity='0.35'%3E%3Ctext x='6' y='14'%3E01010101%3C/text%3E%3Ctext x='6' y='30'%3E01000100 01000010%3C/text%3E%3Ctext x='6' y='46'%3E01001000 01000001%3C/text%3E%3Ctext x='6' y='62'%3E01010110 00100000%3C/text%3E%3Ctext x='6' y='78'%3E00110010 00110000%3C/text%3E%3C/g%3E%3Cg fill='%237c5bff' font-family='JetBrains Mono, monospace' font-size='8' opacity='0.25'%3E%3Ctext x='42' y='22'%3E00110010 00110110%3C/text%3E%3Ctext x='42' y='38'%3E00100000 00101101%3C/text%3E%3Ctext x='42' y='54'%3E00100000 01001111%3C/text%3E%3Ctext x='42' y='70'%3E01110010 01100111%3C/text%3E%3Ctext x='42' y='86'%3E01100001 01101110%3C/text%3E%3C/g%3E%3C/svg%3E");
 }
 
 a {
