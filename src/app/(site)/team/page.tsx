@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { TeamGrid } from '@/components/sections/team-grid';
-import { team } from '@/data/team';
+import { prisma } from '@/lib/prisma';
 
 export const metadata: Metadata = {
   title: 'Team | UDBHAV – Inter-IIIT Hackathon',
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export const revalidate = 120;
 
-export default function TeamPage() {
-  const members = [...team].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+export default async function TeamPage() {
+  const members = await prisma.teamMember.findMany({ orderBy: { order: 'asc' } });
 
   return (
     <div className="space-y-10">

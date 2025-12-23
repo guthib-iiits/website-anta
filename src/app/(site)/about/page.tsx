@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
-import { sponsors } from '@/data/sponsors';
+import { prisma } from '@/lib/prisma';
 
 export const metadata: Metadata = {
   title: 'About | UDBHAV – Inter-IIIT Hackathon',
   description: 'Overview, ethos, and structure of UDBHAV hosted by IIIT Sri City.',
 };
 
-export default function AboutPage() {
-  const sponsorCount = sponsors.length;
+export default async function AboutPage() {
+  const sponsorCount = await prisma.sponsor.count();
 
   return (
     <div className="space-y-10">
@@ -36,7 +36,7 @@ export default function AboutPage() {
         <h2 className="text-2xl font-semibold mb-3">Event Ethos</h2>
         <ul className="space-y-2 text-white/70">
           <li>• Cyberpunk aesthetic with accessible, inclusive experience for all 24 IIITs.</li>
-          <li>• Seamless data-driven ops (future-ready): plug your preferred backend/CMS for teams, sponsors, and the IIIT roster.</li>
+          <li>• Seamless data-driven ops: Prisma + Mongo for teams, sponsors, and IIIT roster.</li>
           <li>• Judging that respects clarity: succinct demos, crisp submissions, transparent scoring.</li>
           <li>• High-signal programming: focused problem statements, anti-bloat UI, strong hierarchy.</li>
         </ul>

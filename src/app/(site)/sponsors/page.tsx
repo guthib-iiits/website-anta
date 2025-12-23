@@ -1,12 +1,14 @@
 import { Metadata } from 'next';
-import { sponsors } from '@/data/sponsors';
+import { prisma } from '@/lib/prisma';
 
 export const metadata: Metadata = {
   title: 'Sponsors | UDBHAV – Inter-IIIT Hackathon',
   description: 'Sponsor slate and tiers for UDBHAV 2025–26.',
 };
 
-export default function SponsorsPage() {
+export default async function SponsorsPage() {
+  const sponsors = await prisma.sponsor.findMany({ orderBy: { order: 'asc' } });
+
   const tiers = sponsors.reduce<Record<string, typeof sponsors>>((acc, sponsor) => {
     acc[sponsor.tier] = acc[sponsor.tier] ? [...acc[sponsor.tier], sponsor] : [sponsor];
     return acc;
@@ -18,7 +20,7 @@ export default function SponsorsPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-white/60">Partners</p>
         <h1 className="text-4xl font-semibold">Sponsor grid</h1>
         <p className="text-white/70 max-w-3xl">
-          Early slate of partners supporting UDBHAV. Backend integration is deferred—current data is static but the UI is production-ready for future CMS/DB hookups.
+          Early slate of partners supporting UDBHAV. Import tools let you onboard more sponsors later via CSV/Excel with Prisma-backed persistence.
         </p>
       </section>
       {Object.entries(tiers).map(([tier, list]) => (

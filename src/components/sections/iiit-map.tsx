@@ -1,6 +1,6 @@
 'use client';
 
-import { IIIT } from '@/data/iiits';
+import { IIIT } from '@prisma/client';
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 

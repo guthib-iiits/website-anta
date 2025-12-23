@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { rounds } from '@/data/rounds';
 import { Button } from '@/components/ui/button';
