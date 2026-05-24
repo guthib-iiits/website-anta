@@ -1,5 +1,9 @@
 # UDBHAV – The Inter-IIIT Hackathon 2025–26
 
+This is a AI Generated website I made for UDBHAV , I do not have any knowledge of web dveleopment , just used AI tools.
+This was made just to give an idea to our web team.
+I do not know web developement
+
 A cyberpunk-grade, multi-page Next.js (App Router) site for **UDBHAV**, hosted by **IIIT Sri City**, uniting 24 IIITs. This drop focuses on design + front-end interactions; backend integration is intentionally deferred.
 
 ## Stack
@@ -35,5 +39,3 @@ Current build ships with static data (24 IIIT placeholders, team roster, sponsor
 - Animations via Framer Motion (page transitions and micro-interactions)
 - Dark neon theming with accessible contrasts
 - Metadata + OG tags configured in `src/app/layout.tsx`
-
-Happy building — may your commits glow neon!
